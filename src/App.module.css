@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap');
+.chatbot{
+  text-align:center;
+  min-height:100vh;
+  background:black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.chatStarted {
+  justify-content: flex-end;  /* neeche le jao */
+  gap: 30px;                  /* neeche gap create karega */
+}
+.chatbot h1{
+  font-size:60px;
+}
+.chatbot h2{
+  font-size:30px;
+  font-weight:300;
+}
+.chatbot h1,.chatbot h2{
+  margin:0px;
+  position:relative;
+  z-index:2;
+  color:white;
+  font-family:"Alan Sans", sans-serif;
+}
+.canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: 0;
+}
+.form{
+  position:relative;
+  max-width: 400px;
+  width: 100%;
+  z-index:2;
+  display:flex;
+  margin:0 auto;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.form input{
+  width:100%;
+  font-family: 'Alan Sans';
+  font-size: 13px;
+  padding: 15px 20px;
+  border-radius: 30px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 0px;
+}
+.form input::placeholder{
+  color: white;
+  opacity: 0.7;
+}
+.form button{
+  position:absolute;
+  right: -16px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 40px;
+  width: 40px;
+  padding: 0px;
+  cursor:pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255);
+  border: 0px;
+}
+.form button:hover{
+  background: rgba(255, 255, 255, 0.8);
+}
+.mainbtns{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:20px;
+    gap:10px;
+}
+.mainbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    gap: 3px;
+    font-family: 'Alan Sans';
+    font-size: 12px;
+    cursor:pointer;
+}
+.mainbtn svg{
+  font-size:20px;
+}
+.downloadcv{
+  position: fixed;
+    top: 50px;
+    right: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: 'Alan Sans';
+    gap: 4px;
+    width: 50px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    z-index:2;
+}
+.backbtn{
+  position:fixed;
+  top: 130px;
+    right: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: 'Alan Sans';
+    gap: 4px;
+    width: 50px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    z-index:2;
+}
+.downloadcv svg{
+  font-size:20px;
+}
+.downloadcv:hover{
+  background: white;
+  color: black;
+}
+.formfill {
+    z-index: 2;
+    position: relative;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    width: fit-content;
+    font-family: 'Alan Sans';
+    font-size: 14px;
+    margin-left: auto;
+    text-align:right;
+}
+.chatlog{
+    max-width: 1080px;
+    width: 100%;
+}
+.airesponse {
+    z-index: 2;
+    position: relative;
+    background: white;
+    color: black;
+    padding: 0.75rem;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    width: fit-content;
+    font-family: 'Alan Sans';
+    font-size: 14px;
+    text-align:left;
+}
+.mainbtn:hover{
+  background:white;
+  color: black;
+}
+.loaderDots::after {
+  content: " ";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 5px;
+  border-radius: 50%;
+  background: white;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+@media(max-width:600px){
+  .chatbot{
+    padding-left:15px;
+    padding-right:15px;
+  }
+  .chatbot h1{
+    font-size:32px;
+  }
+  .chatbot h2{
+    font-size:16px;
+  }
+  .downloadcv{
+    top:20px;
+    right:20px;
+    width:40px;
+    font-size:11px;
+    padding:8px;
+  }
+  .downloadcv svg{
+    font-size:16px;
+  }
+  .backbtn{
+    top:80px;
+    right:20px;
+    width:40px;
+    font-size:11px;
+    padding:8px;
+  }
+  .mainbtns{
+    flex-wrap: wrap;
+    gap:5px;
+  }
+  .mainbtn{
+    width:80px;
+    height:50px;
+    font-size:10px;
+  }
+  .mainbtn svg{
+    font-size:16px;
+  }
+}
